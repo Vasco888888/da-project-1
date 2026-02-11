@@ -1,0 +1,24 @@
+# Compiled binaries
+*.exe
+*.o
+*.out
+bin/
+
+# Temporary and Output files
+output.txt
+*.bak
+
+# IDE specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Doxygen generated documentation
+Documentation/
+html/
+latex/
+
+# Windows specifics
+Thumbs.db
+Desktop.ini

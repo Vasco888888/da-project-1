@@ -1,4 +1,0 @@
-Source:2
-Destination:3
-BestDrivingRoute:2,1250,420,428,955,1142,448,3(29)
-AlternativeDrivingRoute:none
