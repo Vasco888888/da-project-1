@@ -1,6 +1,9 @@
 // Original code by Gonçalo Leão
-// Updated by DA 2024/2025 Team
-
+/**
+ * @file Graph.h
+ * @brief Graph Data_Structure used as base for the project
+ * Updated by DA 2024/2025 Team and João Júnior, Mário Pereira, Vasco Sá
+ */
 #ifndef DA_TP_CLASSES_GRAPH
 #define DA_TP_CLASSES_GRAPH
 
@@ -9,7 +12,7 @@
 #include <queue>
 #include <limits>
 #include <algorithm>
-#include "../data_structures/MutablePriorityQueue.h" // not needed for now
+#include "../data_structs/MutablePriorityQueue.h" // not needed for now
 
 template <class T>
 class Edge;
@@ -26,6 +29,7 @@ public:
 
     T getInfo() const;
     std::vector<Edge<T> *> getAdj() const;
+    bool hasParking() const; ///< checks if the node has parking
     bool isVisited() const;
     bool isProcessing() const;
     unsigned int getIndegree() const;
@@ -36,6 +40,7 @@ public:
     void setInfo(T info);
     void setVisited(bool visited);
     void setProcessing(bool processing);
+    void setParking(bool parking); ///< sets the parking to positive or negative depending on the data input for that node.
 
     int getLow() const;
     void setLow(int value);
@@ -55,6 +60,7 @@ protected:
     std::vector<Edge<T> *> adj;  // outgoing edges
 
     // auxiliary fields
+    bool parking = false; ///< creates a field in each node to check if it has parking
     bool visited = false; // used by DFS, BFS, Prim ...
     bool processing = false; // used by isDAG (in addition to the visited attribute)
     int low = -1, num = -1; // used by SCC Tarjan
@@ -207,6 +213,24 @@ void Vertex<T>::removeOutgoingEdges() {
 template <class T>
 bool Vertex<T>::operator<(Vertex<T> & vertex) const {
     return this->dist < vertex.dist;
+}
+
+/**
+ *
+ * @return boolean value of the current state of the node, if it has parking returns true, otherwise returns false
+ */
+template <class T>
+bool Vertex<T>::hasParking() const {
+    return this->parking;
+}
+
+/**
+ * @brief Set the Parking object
+ * @param parking
+ */
+template <class T>
+void Vertex<T>::setParking(bool parking) {
+    this->parking = parking;
 }
 
 template <class T>
