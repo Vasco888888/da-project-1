@@ -1,6 +1,6 @@
 # Routing Program - DA Project 1
 
-A C++ graph-based routing engine developed for the **Algorithm Design (DA)** course at **FEUP (Faculdade de Engenharia da Universidade do Porto)**, academic year 2024/2025.
+A C++ graph-based routing engine developed for the **Desenho de Algoritmos (DA)** course at **FEUP (Faculdade de Engenharia da Universidade do Porto)**, academic year 2024/2025.
 
 The program implements **Dijkstra's Algorithm** to calculate optimal routes between locations, supporting various constraints such as avoiding specific nodes/edges or ensuring a specific node is included in the path.
 
